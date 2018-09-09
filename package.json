@@ -1,0 +1,31 @@
+{
+    "name": "wp-make2",
+    "version": "1.0.0",
+    "description": "Gulp dependencies for the WordPress `Make` child theme",
+    "main": "gulpfile.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "github.com:chiich/wp-make2.git"
+    },
+    "author": "chiich",
+    "license": "ISC",
+    "dependencies": {
+      "bourbon": "^5.0.0-beta.8",
+      "bourbon-neat": "^2.1.0",
+      "gulp": "^3.9.1",
+      "gulp-autoprefixer": "^4.0.0",
+      "gulp-connect": "^5.0.0",
+      "gulp-sourcemaps": "^1.5.2",
+      "gulp-uglify": "^3.0.1",
+      "gulp-imagemin": "^2.3.0",
+      "gulp-livereload": "^3.8.0",
+      "gulp-sass": "^3.1.0"
+    },
+    "devDependencies": {
+      "imagemin-pngquant": "^4.2.0"
+    }
+  }
+  
