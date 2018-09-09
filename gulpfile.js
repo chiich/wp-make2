@@ -42,13 +42,14 @@ gulp.task('uglify', function () {
 
 gulp.task('css-copy', function () {
     gulp.src('./css/style.css')
-        .pipe('.');
+        .pipe(gulp.dest('.'));
 });
 
-gulp.task('watch', function () {
-    gulp.series('sass', 'css-copy');
+gulp.task('watch', ['sass', 'css-copy'], function () {
+    // gulp.series();
     // livereload.listen();
 
+    gulp.watch('./sass/**/*.scss', ['sass', 'css-copy']);
     // gulp.watch('./js/*.js', ['uglify']);
     // gulp.watch(['./css/*.css', './templates/**/*.twig', './js/*.js'], function (files) {
     //     livereload.changed(files)
