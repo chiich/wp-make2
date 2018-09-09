@@ -33,31 +33,22 @@ gulp.task('sass', function () {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./css'));
 });
-gulp.task('sass_admin', function () {
-    gulp.src(['./williamsleatag_admin/sass/**/*.scss'])
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            sourcemaps: false,
-            // outputStyle: 'compressed',
-            includePaths: [bourbon, neat]
-        }).on('error', sass.logError))
-        .pipe(autoprefixer('last 2 version'))
-        .pipe(sourcemaps.write('./williamsleatag_admin/'))
-        .pipe(gulp.dest('./williamsleatag_admin/css'));
-});
 
 gulp.task('uglify', function () {
     gulp.src('./js/*.js')
-        .pipe(uglify('williamsleatag.min.js'))
+        .pipe(uglify('wp-make2.min.js'))
         .pipe(gulp.dest('./js'));
 });
 
-gulp.task('watch', ['sass','sass_admin'], function () {
+gulp.task('css-copy', function () {
+    gulp.src('./css/style.css')
+        .pipe('.');
+});
+
+gulp.task('watch', function () {
+    gulp.series('sass', 'css-copy');
     // livereload.listen();
 
-    gulp.watch('./sass/**/*.scss', ['sass','sass_admin']);
-    gulp.watch('./fonts/**/*.scss', ['sass','sass_admin']);
-    gulp.watch('./williamsleatag_admin/sass/**/*.scss', ['sass_admin']);
     // gulp.watch('./js/*.js', ['uglify']);
     // gulp.watch(['./css/*.css', './templates/**/*.twig', './js/*.js'], function (files) {
     //     livereload.changed(files)
