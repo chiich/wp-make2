@@ -1,6 +1,6 @@
 var gulp = require("gulp"),
     livereload = require("gulp-livereload"),
-    uglify = require("gulp-uglifyjs"),
+    uglify = require("gulp-uglify"),
     autoprefixer = require("gulp-autoprefixer"),
     sourcemaps = require("gulp-sourcemaps"),
     imagemin = require("gulp-imagemin"),
